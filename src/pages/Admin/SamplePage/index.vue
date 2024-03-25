@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { VDataTable } from 'vuetify/labs/VDataTable'
 import { getCurrentInstance, onBeforeMount, ref } from 'vue';
 import SampleService from '@/services/Sample';
 import { convertDate, convertDateTime, convertFloat, convertInt } from '@/@core/utils/formatters';

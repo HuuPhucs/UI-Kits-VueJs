@@ -1,19 +1,5 @@
 <template>
-  <VLocaleProvider>
-    <VApp>
-      <VAppBar>
-        <v-row>
-          <marquee>
-            <a href="#">Sample</a>
-            <a href="#">Sample</a>
-            <a href="#">Sample</a>
-          </marquee>
-        </v-row>
-      </VAppBar>
-      <RouterView />
-      <ScrollToTop />
-    </VApp>
-  </VLocaleProvider>
+  <RouterView />
 </template>
 <script setup lang="ts">
 </script>
