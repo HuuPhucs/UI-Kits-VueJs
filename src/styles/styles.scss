@@ -1,6 +1,6 @@
 // Write your overrides
 .text-heading {
-  font-size: 40px;
+  font-size: 24px;
   font-style: normal;
   font-weight: 600;
   line-height: 30px;
@@ -34,7 +34,7 @@
   font-style: normal;
   font-weight: 400;
   line-height: 25px;
-  
+  color: black 
 }
 
 .text-contentColorWhite {
@@ -61,4 +61,8 @@
   background: linear-gradient(to top,#247ddc, green );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.v-list-item.v-list-item--active.v-list-item--link.v-theme--light.text-primary.v-list-item--density-comfortable.v-list-item--one-line.v-list-item--variant-text {
+  color: #fff !important;
 }

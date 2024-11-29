@@ -16,7 +16,7 @@ const { width: windowWidth } = useWindowSize()
 const route = useRoute()
 const pageName = ref('')
 watch(route, (val) => {
-  console.log(val.name) // By pass convention
+  // console.log(val.name) // By pass convention
   getPageName(val.name)
 })
 

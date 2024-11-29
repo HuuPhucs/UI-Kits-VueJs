@@ -31,7 +31,7 @@
           </v-col>
 
           <v-col cols="12">
-            <v-btn width="100%" variant="tonal">Log in</v-btn>
+            <v-btn width="100%" variant="tonal" @click="testshow()">Log in</v-btn>
           </v-col>
 
           <v-col cols="12" class="d-flex justify-center py-0">
@@ -41,16 +41,15 @@
           </v-col>
 
           <v-col cols="6" class="d-flex">
-            <v-btn variant="tonal" width="100%" class=" mr-1">
+            <v-btn variant="tonal" width="100%" class="mr-1">
               <VIcon start size="24" icon="tabler-brand-google-filled" />
               Google Account
             </v-btn>
-            <v-btn width="100%" variant="tonal" class=" ml-5">
+            <v-btn width="100%" variant="tonal" class="ml-5">
               <VIcon start size="24" icon="tabler-brand-apple-filled" />
               Apple Account
             </v-btn>
           </v-col>
-
 
           <v-col cols="12" class="mt-4">
             <p>
@@ -65,8 +64,11 @@
 </template>
 
 <script lang="ts" setup>
-
-const submit = () => { };
+import { useRouter } from "vue-router";
+const router = useRouter();
+const testshow = () => {
+  router.push("/SignUp");
+};
 </script>
 <style lang="scss" scoped>
 .img-background {

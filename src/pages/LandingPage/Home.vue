@@ -1,68 +1,46 @@
 <template>
-  <v-layout>
-    <!-- <v-system-bar color="deep-purple darken-3"></v-system-bar> -->
-
-    <v-app-bar prominent :elevation="0" style="padding: 0px 6%">
+  <v-layout ref="app" class="rounded rounded-md setup-background">
+    <v-app-bar prominent :elevation="0" style="padding: 0px 6%" color="#eafcff">
       <div class="d-flex align-center" style="width: 200px">
-        <v-img
-          cover
-          max-width="32"
-          height="32"
-          :src="logohands"
-          class="mr-2"
-        ></v-img>
-        <v-toolbar-title class="test600 green-text"
-          >Phuc Beo<br />
-          HoTel</v-toolbar-title
-        >
+        <v-img cover max-width="32" height="32" :src="logohands" class="mr-2"></v-img>
+        <v-toolbar-title class="test600 green-text">Phuc Beo<br />
+          HoTel</v-toolbar-title>
       </div>
-
-      <!-- <v-spacer></v-spacer> -->
-      <!-- <VRow style="border: 1px solid red" class="mr-8"></VRow> -->
-
-      <v-tabs
-        v-model="tab"
-        bg-color="transparent"
-        color="basil"
-        grow
-        style="margin-right: 60px"
-      >
-        <v-tab v-for="item in items" :key="item" :value="item">
+      <VTabs v-model="currentTab" fixed-tabs bg-color="transparent" color="basil" grow style="margin-right: 60px">
+        <VTab v-for="item in items" :key="item" :value="item">
           {{ item }}
-        </v-tab>
-      </v-tabs>
-
-      <v-window v-model="tab">
-        <v-window-item v-for="item in items" :key="item" :value="item">
-          <v-card color="basil" flat>
-            <v-card-text>{{ text }}</v-card-text>
-          </v-card>
-        </v-window-item>
-      </v-window>
-
+        </VTab>
+      </VTabs>
       <v-avatar class="ml-2">
-        <v-img
-          alt="John"
-          src="https://cdn.vuetifyjs.com/images/john.jpg"
-        ></v-img>
+        <v-img alt="John" src="https://cdn.vuetifyjs.com/images/john.jpg"></v-img>
       </v-avatar>
     </v-app-bar>
-
-    <v-main style="height: 90vh;margin: 30px 5%">
-      <v-layout >
-        <HomescreenVue/>
-      </v-layout>
-  
-    </v-main>
+    <div>
+      <v-main class="align-center justify-center " style="min-height: 300px; margin-bottom: 50px">
+        <div style="margin: 10px 4% 0px 2%">
+          <ArticleHome />
+        </div>
+      </v-main>
+    </div>
   </v-layout>
+  <FooterHome />
 </template>
 
 <script setup lang="ts">
 import { ref } from "vue";
 import logohands from "@/assets/images/logo/Logo.png";
-import HomescreenVue from "./Homescreen.vue";
+import ArticleHome from "./ArticleHome.vue";
+import FooterHome from "./FooterHome.vue";
 
-
-const tab = ref("Appetizers");
-const items = ref(["Appetizers", "Entrees", "Deserts", "Cocktails"]);
+const currentTab = ref("Hà Nội");
+const items = ["Hà Nội", "Hà Giang", "Đà Nẵng", "TP. Hồ Chí Minh"];
+const tabItemText =
+  "hortbread chocolate bar marshmallow bear claw tiramisu chocolate cookie wafer. Gummies sweet brownie brownie marshmallow chocolate cake pastry. Topping macaroon shortbread liquorice dragée macaroon.";
 </script>
+<style lang="scss" scoped>
+.setup-background {
+  background-size: cover;
+  height: 100%;
+  background-image: url("@/assets/images/iconify-svg/background.svg");
+}
+</style>
